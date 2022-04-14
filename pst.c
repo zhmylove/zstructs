@@ -345,10 +345,10 @@ static pst_node_t* __t_op(pst_node_t *root, __t_op_t op, char *key, void *val) {
                 root = root->_t_leaves[_t_hash(*key)];
 
                 if (root == NULL) {
-                    if (op == TOP_LKP || op == TOP_REM) {
+                    if (op & (TOP_LKP | TOP_REM)) {
                         D(101); // ENTRY NOT FOUND
                         return NULL;
-                    } else if (op == TOP_ADD || op == TOP_SET) {
+                    } else if (op & (TOP_ADD | TOP_SET)) {
                         if ((root = __T_CALLOC) == NULL) {
                             D(999); // UNABLE TO ALLOC
                             return NULL;

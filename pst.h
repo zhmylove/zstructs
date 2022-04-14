@@ -76,11 +76,11 @@ void pst_destroy_with_data(pst_node_t *root);
 static void __t_destructor(pst_node_t *root, char with_data);
 
 typedef enum __t_op {
-    TOP_NOP,
-    TOP_LKP,
-    TOP_ADD,
-    TOP_SET,
-    TOP_REM,
+    TOP_NOP = 0,
+    TOP_LKP = 1 << 0,
+    TOP_ADD = 1 << 1,
+    TOP_SET = 1 << 2,
+    TOP_REM = 1 << 3,
     TOP_SIZE
 } __t_op_t;
 

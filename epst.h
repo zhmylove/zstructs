@@ -63,7 +63,6 @@ static inline void epst_destroy(epst_t *root) {
 }
 
 #undef __EPST_CALLOC
-#undef __NONCE
 #undef __M
 #undef _NOMANGLE_
 #endif /* __EPST */
