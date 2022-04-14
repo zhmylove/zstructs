@@ -4,7 +4,7 @@
 #ifndef __T_INTERNAL
 
 typedef struct t_node pst_node_t;
-extern pst_node_t* pst_create();
+extern pst_node_t* pst_create(void);
 extern void* pst_lookup(pst_node_t *root, char *key);
 extern void* pst_add(pst_node_t *root, char *key, void *val);
 extern void* pst_set(pst_node_t *root, char *key, void *val);
@@ -65,10 +65,10 @@ unsigned char _t_hash_values[256];
 static volatile unsigned char _t_hash_ready = 0;
 
 // is: array initializer
-static void _t_hash_init();
+static void _t_hash_init(void);
 
 // r: ptr to new _t_
-pst_node_t* pst_create();
+pst_node_t* pst_create(void);
 
 // is: tree destructors
 void pst_destroy(pst_node_t *root);

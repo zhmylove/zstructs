@@ -4,7 +4,7 @@
 // will be undefined at the end
 #define __T_CALLOC ((pst_node_t*)calloc(1, sizeof(struct t_node)))
 
-static void _t_hash_init() {
+static void _t_hash_init(void) {
 #ifndef __T_NOHASH
     unsigned char _t_ok = 0;
 #define _T_OK (_t_ok++)
@@ -277,7 +277,7 @@ static inline unsigned char _t_hash(register char chr) {
 }
 #endif // __T_NOHASH
 
-extern pst_node_t* pst_create() {
+extern pst_node_t* pst_create(void) {
     if (!_t_hash_ready) {
         _t_hash_init();
     }
